@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -44,8 +45,8 @@ input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
 <header>
   <a class="brand" href="services.html">Um Salma Perfumes</a>
   <nav>
-    <a href="services.html" >الخدمات</a>
-    <a href="about.html" >عنا</a>
+    <a href="services.html">الخدمات</a>
+    <a href="about.html">عنا</a>
     <a href="contact.html" class="active">تواصل معنا</a>
     <button class="btn logout" id="logoutBtn" type="button">تسجيل خروج</button>
   </nav>
@@ -66,20 +67,6 @@ input:focus,textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 
   </div>
 </main>
 <footer>© Um Salma Perfumes - جميع الحقوق محفوظة</footer>
-<script>
-if (sessionStorage.getItem("loggedIn") !== "true") { location.replace("index.html"); }
-document.getElementById("logoutBtn").addEventListener("click", function () {
-  sessionStorage.removeItem("loggedIn");
-  location.href = "index.html";
-});
-</script>
-<script>
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  // ملاحظة: الإرسال الفعلي يحتاج سيرفر؛ هنا نعرض رسالة شكر فقط
-  document.getElementById("msg").textContent = "شكرًا لك! تم استلام رسالتك.";
-  this.reset();
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
