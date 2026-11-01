@@ -4,13 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Um Salma - تسجيل الدخول</title>
-<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-#loginForm [hidden]{display:none !important}
-#loginForm button.link-btn{min-height:auto;margin:0;padding:6px;background:none;border:0;box-shadow:none;color:#8c4a62;font-size:.95rem;font-weight:500;text-decoration:underline;cursor:pointer}
+:root{--plum-deep:#2b1233;--plum-mid:#4a2150;--rose-dusk:#8c4a62;--gold:#c9a45c;--gold-soft:#e6cf9a;--paper:#fbf7f2;--line:#e4d9cc;--danger:#b3261e}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;font-family:"Tajawal","Segoe UI",Tahoma,sans-serif;color:var(--plum-deep)}
+h1{font-family:"Amiri","Times New Roman",serif;margin:0}
+.btn{display:inline-block;min-height:46px;padding:12px 22px;font:inherit;font-weight:700;color:var(--plum-deep);background:linear-gradient(135deg,var(--gold-soft),var(--gold));border:0;border-radius:12px;cursor:pointer;text-align:center;transition:box-shadow .2s,transform .15s}
+.btn:hover{box-shadow:0 8px 20px rgba(201,164,92,.45)}
+.btn:active{transform:translateY(1px)}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+body{min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;padding:clamp(16px,4vw,48px);background:radial-gradient(ellipse at 15% 10%,var(--rose-dusk) 0%,transparent 55%),radial-gradient(ellipse at 85% 90%,var(--plum-mid) 0%,transparent 60%),var(--plum-deep);background-attachment:fixed}
+.login-container{width:100%;max-width:420px;padding:clamp(24px,6vw,44px) clamp(20px,5vw,36px);background:var(--paper);border-radius:20px;border-top:4px solid var(--gold);box-shadow:0 24px 60px rgba(20,5,28,.45);text-align:center}
+.login-container h1{font-size:clamp(1.7rem,6vw,2.4rem);line-height:1.25}
+.login-container p{margin:6px 0 clamp(20px,5vw,30px);color:var(--rose-dusk);font-size:clamp(.95rem,3.2vw,1.1rem)}
+form{display:flex;flex-direction:column;gap:14px}
+input{width:100%;padding:14px 16px;font:inherit;font-size:1rem;color:var(--plum-deep);background:#fff;border:1.5px solid var(--line);border-radius:12px;transition:border-color .2s,box-shadow .2s}
+input[hidden]{display:none}
+input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,164,92,.25)}
+.link-btn{padding:6px;font:inherit;font-size:.95rem;font-weight:500;color:var(--rose-dusk);background:none;border:0;text-decoration:underline;cursor:pointer}
+#error{display:block;min-height:1.4em;font-weight:500;color:var(--danger)}
+@media (min-width:1200px){.login-container{max-width:480px}}
+@media (max-height:520px){body{align-items:flex-start}.login-container{margin:auto}}
 </style>
 </head>
-<body class="login-body">
+<body>
 <div class="login-container">
   <h1>Um Salma Perfumes</h1>
   <p id="subtitle">عالم العطور الفاخرة</p>
@@ -18,7 +40,7 @@
     <input type="text" id="username" placeholder="اسم المستخدم" autocomplete="username" required>
     <input type="password" id="password" placeholder="كلمة السر" autocomplete="current-password" required>
     <input type="password" id="password2" placeholder="أعد كتابة كلمة السر" autocomplete="new-password" hidden>
-    <button type="submit" id="submitBtn">تسجيل الدخول</button>
+    <button type="submit" id="submitBtn" class="btn">تسجيل الدخول</button>
     <button type="button" id="switchBtn" class="link-btn">ليس لديك حساب؟ أنشئ حساب جديد</button>
     <span id="error" role="alert"></span>
   </form>
@@ -56,7 +78,6 @@ async function hashText(text) {
 }
 
 function showError(msg) {
-  errEl.style.color = "";
   errEl.textContent = msg;
 }
 
