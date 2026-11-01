@@ -41,19 +41,6 @@ input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 4px rgba(201,
     <span id="error" role="alert"></span>
   </form>
 </div>
-<script>
-document.getElementById("loginForm").addEventListener("submit", function (e) {
-  e.preventDefault();
-  var user = document.getElementById("username").value.trim();
-  var pass = document.getElementById("password").value.trim();
-  // الاسم: um salma  والباسورد: 1234
-  if (user === "um salma" && pass === "1234") {
-    sessionStorage.setItem("loggedIn", "true");
-    window.location.href = "services.html";
-  } else {
-    document.getElementById("error").textContent = "خطأ في الاسم أو كلمة السر";
-  }
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
