@@ -44,9 +44,9 @@ footer{padding:20px 16px;text-align:center;font-size:.9rem;color:#fff;background
 <header>
   <a class="brand" href="services.html">Um Salma Perfumes</a>
   <nav>
-    <a href="services.html" >الخدمات</a>
+    <a href="services.html">الخدمات</a>
     <a href="about.html" class="active">عنا</a>
-    <a href="contact.html" >تواصل معنا</a>
+    <a href="contact.html">تواصل معنا</a>
     <button class="btn logout" id="logoutBtn" type="button">تسجيل خروج</button>
   </nav>
 </header>
@@ -66,12 +66,6 @@ footer{padding:20px 16px;text-align:center;font-size:.9rem;color:#fff;background
   </div>
 </main>
 <footer>© Um Salma Perfumes - جميع الحقوق محفوظة</footer>
-<script>
-if (sessionStorage.getItem("loggedIn") !== "true") { location.replace("index.html"); }
-document.getElementById("logoutBtn").addEventListener("click", function () {
-  sessionStorage.removeItem("loggedIn");
-  location.href = "index.html";
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
