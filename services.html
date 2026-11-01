@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
@@ -45,8 +46,8 @@ footer{padding:20px 16px;text-align:center;font-size:.9rem;color:#fff;background
   <a class="brand" href="services.html">Um Salma Perfumes</a>
   <nav>
     <a href="services.html" class="active">الخدمات</a>
-    <a href="about.html" >عنا</a>
-    <a href="contact.html" >تواصل معنا</a>
+    <a href="about.html">عنا</a>
+    <a href="contact.html">تواصل معنا</a>
     <button class="btn logout" id="logoutBtn" type="button">تسجيل خروج</button>
   </nav>
 </header>
@@ -63,15 +64,18 @@ footer{padding:20px 16px;text-align:center;font-size:.9rem;color:#fff;background
     <article class="card"><div class="icon">🎁</div><h3>تغليف هدايا</h3><p>تغليف أنيق للهدايا في الأعراس والأعياد والمناسبات.</p></article>
     <article class="card"><div class="icon">🚚</div><h3>توصيل</h3><p>نوصّل طلبك إلى باب بيتك بسرعة وأمان.</p></article>
   </div>
+  <section id="products">
+    <h2>منتجاتنا</h2>
+    <div class="tools">
+      <input type="search" id="searchBox" placeholder="ابحث عن عطر..." aria-label="بحث">
+      <select id="catFilter" aria-label="الصنف"></select>
+    </div>
+    <div class="products" id="productGrid"></div>
+    <p id="noResults" hidden>لا توجد منتجات مطابقة لبحثك.</p>
+  </section>
   <div class="cta"><a class="btn" href="contact.html">اطلب أو استفسر الآن</a></div>
 </main>
 <footer>© Um Salma Perfumes - جميع الحقوق محفوظة</footer>
-<script>
-if (sessionStorage.getItem("loggedIn") !== "true") { location.replace("index.html"); }
-document.getElementById("logoutBtn").addEventListener("click", function () {
-  sessionStorage.removeItem("loggedIn");
-  location.href = "index.html";
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
